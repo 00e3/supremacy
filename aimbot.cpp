@@ -212,6 +212,9 @@ void AimPlayer::UpdateAnimations(LagRecord* record) {
 	if (m_records.size() >= 3)
 		pre_previous = this->m_records[2].get();
 
+	// is player a bot?
+	bool bot = game::IsFakePlayer(m_player->index());
+
 	// reset fakewalk state.
 	record->m_fake_walk = false;
 	record->m_mode = Resolver::Modes::RESOLVE_NONE;
@@ -298,15 +301,11 @@ void AimPlayer::UpdateAnimations(LagRecord* record) {
 		this->m_player->m_flDuckAmount() = previous->m_duck + change;
 	}
 
-	bool bot = game::IsFakePlayer(m_player->index());
-
-	bool fake = g_menu.main.aimbot.enable.get();
+	bool fake = bot && g_menu.main.aimbot.enable.get();
 
 	// if using fake angles, correct angles.
 	if (fake)
 		g_resolver.ResolveAngles(this->m_player, record, previous);
-	else if (bot)
-		return;
 
 	// set stuff before animating.
 	this->m_player->m_vecOrigin() = record->m_origin;
