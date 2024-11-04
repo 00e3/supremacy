@@ -42,6 +42,7 @@ public:
 	Player* m_player;
 	float	  m_spawn;
 	records_t m_records;
+	float	  m_freestand[2];
 
 	// aimbot data.
 	hitboxcan_t m_hitboxes;
@@ -71,6 +72,7 @@ public:
 	int m_airlast_index;
 	int m_air_index;
 	int m_airlby_index;
+	float     m_body_delta;
 	int m_airback_index;
 	int m_back_index;
 	int m_back_at_index;
@@ -79,8 +81,11 @@ public:
 	int m_lby_index;
 	float update_body;
 	int m_lowlby_index;
+	int m_move_index;
+	int m_stand_int[7];
 	bool valid_flick;
 	int m_lbyticks;
+	LagRecord m_walk_stuff;
 	bool m_broke_lby;
 	bool m_has_body_updated;
 	bool ever_flicked;
@@ -127,6 +132,7 @@ public:
 		m_spawn = 0.f;
 		m_walk_record = LagRecord{};
 		m_shots = 0;
+		m_body_delta = 0;
 		m_missed_shots = 0;
 
 		m_records.clear();

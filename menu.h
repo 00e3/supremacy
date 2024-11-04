@@ -4,6 +4,7 @@ class AimbotTab : public Tab {
 public:
 	// col1.
 	Checkbox	  enable;
+	Checkbox      lagfix;
 	Checkbox	  silent;
 	Dropdown	  selection;
 	//Checkbox	  fov;
@@ -34,7 +35,6 @@ public:
 	Checkbox      override_pistols;
 	Slider	      reduce_pistols;
 	Checkbox      ignor_limbs;
-	Checkbox      lagfix;
 	Checkbox	  correct;
 	//Checkbox	  baim1;
 	//MultiDropdown baim2;
@@ -57,6 +57,9 @@ public:
 
 		enable.setup(XOR("enable"), XOR("enable"));
 		RegisterElement(&enable);
+
+		lagfix.setup(XOR("lagfix"), XOR("lagfix"));
+		RegisterElement(&lagfix, 1);
 
 		silent.setup(XOR("silent aimbot"), XOR("silent"));
 		RegisterElement(&silent);
@@ -111,9 +114,6 @@ public:
 
 		//hitchance.setup(XOR("hitchance"), XOR("hitchance"));
 		//RegisterElement(&hitchance, 1);
-
-		lagfix.setup(XOR("fake-lag simulation"), XOR("lagfix"));
-		RegisterElement(&lagfix, 1);
 
 		//baim1.setup(XOR("prefer body aim if lethal"), XOR("baim1"));
 		//RegisterElement(&baim1, 1);

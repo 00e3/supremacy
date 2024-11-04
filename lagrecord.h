@@ -62,6 +62,7 @@ public:
 	int              m_server_delta;
 	float  m_sim_time;
 	float  m_old_sim_time;
+	int    m_sim_tick;
 	int    m_flags;
 	vec3_t m_origin;
 	vec3_t m_old_origin;

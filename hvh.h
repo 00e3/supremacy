@@ -19,6 +19,25 @@ public:
 	}
 };
 
+class AdaptiveAngle1 {
+public:
+	float m_yaw1;
+	float m_add1;
+	float m_dist1;
+
+public:
+	// ctor.
+	__forceinline AdaptiveAngle1(float yaw1, float add1) {
+		// set yaw.
+		m_yaw1 = math::NormalizedAngle(yaw1);
+		m_add1 = math::NormalizedAngle(add1);
+		float penalty = 0.f;
+
+		float m_dist = 0.f;
+		m_dist -= penalty;
+	}
+};
+
 enum AntiAimMode : size_t {
 	STAND = 0,
 	WALK,

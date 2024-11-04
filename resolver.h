@@ -41,31 +41,38 @@ public:
 		RESOLVE_UPD_LBY, // 33
 		RESOLVE_LAST_UPD_LBY, // 34
 		RESOLVE_FAKEWALK, // 35
+		RESOLVE_STAND_DELTA, // 36
+	};
+
+	enum StandRecords : size_t {
+		STAND,
+		MOVE,
+		DELTA,
+		BACK,
+		SIDE,
+		LOGIC,
+		PREUPDATE,
 	};
 
 public:
 	LagRecord* FindIdealRecord(AimPlayer* data);
 	LagRecord* FindLastRecord(AimPlayer* data);
-
 	bool IsYawSideways(Player* entity, float yaw);
-
+	void ResolveStand(AimPlayer* data, LagRecord* record, CCSGOPlayerAnimState* state);
 	void OnBodyUpdate(Player* player, float value);
-	float GetAwayAngle(LagRecord* record);
-
+	float GetAwayAngle(Player* player);
 	void MatchShot(AimPlayer* data, LagRecord* record);
 	void SetMode(LagRecord* record);
-
+	void ResolveAngles(Player* player, LagRecord* record, LagRecord* previous);
+	void miss_reset(int index);
+	float AutoDirection(LagRecord* record, float multiplier);
 	void FindBestAngle(Player* player, LagRecord* record);
-	void ResolveAngles(Player* player, LagRecord* record);
 	void ResolveWalk(AimPlayer* data, LagRecord* record, Player* player);
-	void ResolveYawBruteforce(LagRecord* record, Player* player, AimPlayer* data);
-	void ResolveStand(AimPlayer* data, LagRecord* record, Player* player);
 	void StandNS(AimPlayer* data, LagRecord* record);
-	void ResolveAir(AimPlayer* data, LagRecord* record, Player* player);
-
+	void ResolveAir(AimPlayer* data, LagRecord* record, LagRecord* previous, CCSGOPlayerAnimState* state);
 	void AirNS(AimPlayer* data, LagRecord* record);
 	void ResolvePoses(Player* player, LagRecord* record);
-	void ResolveOverride(Player* player, LagRecord* record, AimPlayer* data);
+	void ResolveOverride(Player* player, LagRecord* record, AimPlayer* data, LagRecord* previous);
 
 public:
 	std::array< vec3_t, 64 > m_impacts;
