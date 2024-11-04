@@ -1,0 +1,77 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+*.vsidx
+*.ipch
+*.db
+supremacy-master/.vs/supremacy_csgo/v15/.suo
+*.lock
+supremacy-master/.vs/supremacy_csgo/v17/.suo
+*.db-wal
+*.db-shm
+supremacy-master/.vs/supremacy_csgo/v17/Browse.VC.opendb
+*.lastbuildstate
+*.tlog
+*.log
+*.iobj
+*.ipdb
+*.iobj
+*.bin
+*.pdb
+*.idb
+*.ilk
+*.exp
+*.iobj
+*.ipdb
+*.txt
+*.ipdb
+*.iobj
+*.exp
+*.ipdb
+*.iobj
+supremacy-master/Release/supremacy_csgo.iobj
+supremacy-master/Release/supremacy_csgo.ipdb
+supremacy-master/resolver - Copy.cpp
+*.recipe
+*.zip
+*.rar
+supremacy-master/.vs/supremacy_csgo/v15/Browse.VC.opendb
+*.opendb
+supremacy-master/output/release_no_heartbeat/.vs/release_no_heartbeat/v17/.wsuo
+*.json
+*.sqlite
+.vs/fade/v15/.suo
+*.vcxproj
+.vs/fade/v17/.suo
+.vs/fade/v17/.suo
+/.vs/cheat/v17/.suo
+/.vs/cheat/v16/.suo
